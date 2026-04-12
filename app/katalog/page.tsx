@@ -27,7 +27,7 @@ export default async function KatalogPage({
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold">Semua Produk</h1>
         <p className="text-gray-500 mt-2">
-          Temukan keindahan rangkaian bunga rajut dan aksesoris handmade kami.
+          Temukan keindahan rangkaian bunga kawat bulu dan aksesoris handmade kami.
         </p>
       </div>
 

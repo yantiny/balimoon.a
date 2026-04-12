@@ -9,13 +9,13 @@ export default function Sidebar() {
                   <Image
                       width={50}
                       height={50}
-            src="/avatar.jpg"
+            src="/logo.png"
             alt="Admin"
             className="w-full h-full object-cover"
           />
         </div>
         <div className="flex-1">
-          <p className="font-bold text-sm text-slate-800">Yantini</p>
+          <p className="font-bold text-sm text-slate-800">Balimoon Assesoris</p>
           <p className="text-xs text-slate-500">Admin</p>
         </div>
         <LogOut className="w-4 h-4 text-slate-400 cursor-pointer" />
