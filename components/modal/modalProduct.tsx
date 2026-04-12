@@ -7,11 +7,11 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 interface Product {
-  id: string;
+  id: number;
   name: string;
   category: string;
     price: number;
-    deskripsi: string;
+    deskripsi?: string;
   image: string;
 }
 
@@ -110,22 +110,22 @@ export default function ProductModal({
           .from("products")
           .update({
             name,
-              category,
+            category,
             deskripsi,
             price,
             image,
           })
-              .eq("id", product.id)
-  .select();
+          .eq("id", product.id)
+          .select();
 
-          if (error) throw error;          
+        if (error) throw error;
 
-          alert("Produk berhasil diupdate!");
-          
-          console.log(data);
-          console.log(error);
-          console.log("PRODUCT:", product);
-          console.log("ID:", product?.id);
+        alert("Produk berhasil diupdate!");
+
+        console.log(data);
+        console.log(error);
+        console.log("PRODUCT:", product);
+        console.log("ID:", product?.id);
       }
 
       // ======================
@@ -153,8 +153,12 @@ export default function ProductModal({
 
       setImageFile(null);
       setPreviewUrl(null);
-    } catch (error: any) {
-      alert("Gagal: " + error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        alert("Gagal: " + error.message);
+      } else {
+        alert("Gagal: Terjadi kesalahan yang tidak diketahui");
+      }
     } finally {
       setLoading(false);
     }
