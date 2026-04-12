@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BuketSection() {
   const products = [
@@ -44,7 +45,7 @@ export default function BuketSection() {
           <div key={index} className="group cursor-pointer">
             {/* Image */}
             <div className="overflow-hidden rounded-xl">
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
                 className="w-full h-80 object-cover group-hover:scale-105 transition duration-300"
