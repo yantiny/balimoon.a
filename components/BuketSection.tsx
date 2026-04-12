@@ -50,7 +50,7 @@ export default function BuketSection() {
                 alt={product.name}
                 className="w-full h-80 object-cover group-hover:scale-105 transition duration-300"
               />
-            </div>
+            </div>jsandhas
 
             {/* Info */}
             <div className="mt-3">
