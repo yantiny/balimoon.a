@@ -1,7 +1,7 @@
 "use client";
 
 import { Pencil, Trash2 } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -117,9 +117,7 @@ export default function ProductTable({
                   <td className="px-6 py-4">
                     <div className="w-12 h-12 rounded-full bg-slate-100 overflow-hidden border border-slate-100 relative">
                       {p.image ? (
-                        <Image
-                          width={50}
-                          height={50}
+                        <img
                           src={p.image}
                           alt={p.name}
                           className="object-cover w-full h-full"

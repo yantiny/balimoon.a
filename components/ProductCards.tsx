@@ -1,5 +1,5 @@
 import Link from "next/link"; // Import Link untuk navigasi
-import Image from "next/image"; // Import Image untuk optimasi gambar
+// import Image from "next/image"; // Import Image untuk optimasi gambar
 
 type Product = {
   id: string;
@@ -14,11 +14,9 @@ export default function ProductCard({ product }: { product: Product }) {
     /* Gunakan Link dan arahkan href ke folder /katalog/[id] */
     <Link href={`/katalog/${product.id}`} className="group cursor-pointer">
       <div className="overflow-hidden rounded-xl">
-        <Image
+        <img
           src={product.image}
           alt={product.name}
-          width={300}
-          height={256}
           className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
         />
       </div>
