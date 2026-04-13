@@ -77,7 +77,7 @@ export default function Footer() {
                 WhatsApp
               </a>
               <a
-                href="https://www.facebook.com/" // ganti dengan link FB kamu
+                href="https://www.facebook.com/share/1J5nCfSoEp/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-gray-600 hover:text-black"
