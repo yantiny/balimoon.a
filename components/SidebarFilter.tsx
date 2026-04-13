@@ -23,7 +23,7 @@ export default function SidebarFilter({ activeCategory }: Props) {
   };
 
   const categories = [
-    { id: "buket", label: "Buket Bunga" },
+    { id: "bucket", label: "Buket Bunga" },
     { id: "hairpin", label: "Hairpin" },
     { id: "minivas", label: "Mini Vas" },
     { id: "keychain", label: "Keychain" },
