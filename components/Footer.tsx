@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Instagram, Phone, ShoppingBag } from "lucide-react";
+import { Facebook, Instagram, Phone, ShoppingBag } from "lucide-react";
 import { FaTiktok } from "react-icons/fa";
 
 export default function Footer() {
@@ -65,6 +65,15 @@ export default function Footer() {
               >
                 <Phone className="text-green-500" size={20} />
                 WhatsApp
+              </a>
+              <a
+                href="https://www.facebook.com/" // ganti dengan link FB kamu
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-600 hover:text-black"
+              >
+                <Facebook className="text-blue-600" size={20} />
+                Facebook
               </a>
             </div>
           </div>
