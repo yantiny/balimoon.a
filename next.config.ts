@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'ID-PROYEK-KAMU.supabase.co', // Ganti pake hostname Supabase kamu
+        hostname: 'https://bopfhncluvcxvdgbnvxt.supabase.co', // Ganti pake hostname Supabase kamu
         port: '',
         pathname: '/storage/v1/object/public/**', // Ini buat izinin semua file di bucket public
       },
