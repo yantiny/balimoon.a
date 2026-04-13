@@ -1,5 +1,5 @@
 import { supabase } from "@/lib/supabaseClient";
-import Image from "next/image";
+// import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MessageCircle, ShoppingBag } from "lucide-react"; // Import ikon
 
@@ -28,9 +28,7 @@ export default async function DetailProdukPage({
       {/* Bagian Gambar */}
       <div className="w-full md:w-1/2">
         <div className="sticky top-10">
-          <Image
-            width={600}
-            height={600}
+          <img
             src={product.image}
             alt={product.name}
             className="w-full h-[600px] object-cover rounded-3xl shadow-sm"
