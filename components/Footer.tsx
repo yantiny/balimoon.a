@@ -59,6 +59,16 @@ export default function Footer() {
               </a>
 
               <a
+                href="https://www.tiktok.com/@balimoon.a?_r=1&_t=ZS-94eI4RV1eOQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-gray-600 hover:text-black"
+              >
+                <FaTiktok className="text-black" size={20} />
+                TikTok
+              </a>
+
+              <a
                 href="https://wa.me/6283125400242?text=Halo, saya tertarik dengan produk Balimoon Assesoris"
                 target="_blank"
                 className="flex items-center gap-3 text-gray-600 hover:text-black"
@@ -90,16 +100,6 @@ export default function Footer() {
               >
                 <ShoppingBag className="text-orange-500" size={20} />
                 Shopee
-              </a>
-
-              <a
-                href="https://www.tiktok.com/@balimoon.a?_r=1&_t=ZS-94eI4RV1eOQ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-600 hover:text-black"
-              >
-                <FaTiktok className="text-black" size={20} />
-                TikTok
               </a>
             </div>
           </div>
