@@ -42,6 +42,13 @@ const testimonials = [
     review: "Kualitas produk bagus kak anti mainstream pantang layu",
     rating: 5,
   },
+  {
+    name: "Rani",
+    image: "/testimoni/image.png",
+    review:
+      "Iiiiih lucu cekayiii😖😖thank you min udah mau didadak orderannya dan hasilnya bagus sesuai request👍 luv banget sma hasilnya🥰🥰",
+    rating: 5,
+  },
 ];
 
 export default function TestimonialSection() {
