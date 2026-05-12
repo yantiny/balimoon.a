@@ -3,23 +3,23 @@ import Link from "next/link";
 export default function KeychainSection() {
   const products = [
     {
-      name: "Sakura Clip",
+      name: "Rabbit",
       price: "Rp 15.000",
       image: "/keychain/kelinci.jpg",
     },
     {
-      name: "Pastel Flower",
-      price: "Rp 6.000",
+      name: "Rabbit and Octopus",
+      price: "Rp 15.000",
       image: "/keychain/gurita.jpg",
     },
     {
-      name: "Cherry clip",
-      price: "Rp 7.000",
+      name: "Butterfly",
+      price: "Rp 7.500",
       image: "/keychain/butterfly.jpg",
     },
     {
-      name: "Red Butterfly",
-      price: "Rp 7.000",
+      name: "Kuromi",
+      price: "Rp 15.000",
       image: "/keychain/kuromi.jpg",
     },
   ];

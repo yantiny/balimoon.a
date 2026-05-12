@@ -9,18 +9,18 @@ export default function BuketSection() {
       image: "/buket/tulip.jpg",
     },
     {
-      name: "Pastel Flower",
-      price: "Rp 6.000",
+      name: "Purple Garbera",
+      price: "Rp 27.000",
       image: "/buket/garbera.jpg",
     },
     {
-      name: "Cherry clip",
-      price: "Rp 7.000",
+      name: "Blue Sea",
+      price: "Rp 167.000",
       image: "/buket/biru.jpg",
     },
     {
-      name: "Red Butterfly",
-      price: "Rp 7.000",
+      name: "Tiny Flowers",
+      price: "Rp 149.000",
       image: "/buket/kecil.jpg",
     },
   ];

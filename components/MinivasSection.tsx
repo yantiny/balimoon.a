@@ -3,23 +3,23 @@ import Link from "next/link";
 export default function MinivasSection() {
   const products = [
     {
-      name: "Sakura Clip",
-      price: "Rp 15.000",
+      name: "Kaktus",
+      price: "Rp 33.000",
       image: "/minivas/kaktus.jpg",
     },
     {
-      name: "Pastel Flower",
-      price: "Rp 6.000",
+      name: "Mini Tulip",
+      price: "Rp 33.000",
       image: "/minivas/tulip.jpg",
     },
     {
-      name: "Cherry clip",
-      price: "Rp 7.000",
+      name: "Garbera",
+      price: "Rp 33.000",
       image: "/minivas/garbera.jpg",
     },
     {
-      name: "Red Butterfly",
-      price: "Rp 7.000",
+      name: "Sunflower",
+      price: "Rp 33.000",
       image: "/minivas/matahari.jpg",
     },
   ];
