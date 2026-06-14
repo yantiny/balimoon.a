@@ -52,47 +52,50 @@ const testimonials = [
 ];
 
 export default function TestimonialSection() {
-  const itemsPerSlide = 3;
-
-  const slides = [];
-  for (let i = 0; i < testimonials.length; i += itemsPerSlide) {
-    slides.push(testimonials.slice(i, i + itemsPerSlide));
-  }
-
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    align: "start"
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
   useEffect(() => {
     if (!emblaApi) return;
-
+    
+    setScrollSnaps(emblaApi.scrollSnapList());
+    
     const onSelect = () => {
       setSelectedIndex(emblaApi.selectedScrollSnap());
     };
 
     emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", () => {
+      setScrollSnaps(emblaApi.scrollSnapList());
+    });
+    
     onSelect();
   }, [emblaApi]);
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 sm:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Title */}
-        <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl font-bold text-gray-800">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 gap-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">
             Testimoni Pelanggan
           </h2>
 
-          <div className="flex gap-3">
+          <div className="flex gap-2">
             <button
               onClick={() => emblaApi?.scrollPrev()}
-              className="px-4 py-2 border rounded-lg text-gray-600 hover:bg-gray-100"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-100 transition cursor-pointer"
             >
               Kembali
             </button>
 
             <button
               onClick={() => emblaApi?.scrollNext()}
-              className="px-4 py-2 border rounded-lg bg-white shadow hover:bg-gray-100"
+              className="px-3 py-1.5 sm:px-4 sm:py-2 border border-gray-200 rounded-lg bg-white text-sm shadow-sm hover:bg-gray-100 transition cursor-pointer"
             >
               Lanjut
             </button>
@@ -101,49 +104,45 @@ export default function TestimonialSection() {
 
         {/* Slider */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {slides.map((group, index) => (
-              <div key={index} className="flex-[0_0_100%] px-4">
-                <div className="grid grid-cols-3 gap-6">
-                  {group.map((item, i) => (
-                    <div
-                      key={i}
-                      className="bg-white rounded-2xl shadow-sm p-6 flex flex-col min-h-[220px]"
-                    >
-                      {/* Avatar + Rating */}
-                      <div className="flex items-center justify-between mb-4">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          width={50}
-                          height={50}
-                          className="rounded-full"
+          <div className="flex -ml-4">
+            {testimonials.map((item, index) => (
+              <div 
+                key={index} 
+                className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4"
+              >
+                <div className="bg-white rounded-2xl border border-gray-100 p-6 flex flex-col min-h-[220px] h-full shadow-sm">
+                  {/* Avatar + Rating */}
+                  <div className="flex items-center justify-between mb-4">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={48}
+                      height={48}
+                      className="rounded-full object-cover"
+                    />
+
+                    <div className="flex">
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star
+                          key={j}
+                          size={16}
+                          className={
+                            j < item.rating
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-gray-200"
+                          }
                         />
-
-                        <div className="flex">
-                          {Array.from({ length: 5 }).map((_, j) => (
-                            <Star
-                              key={j}
-                              size={18}
-                              className={
-                                j < item.rating
-                                  ? "text-yellow-400 fill-yellow-400"
-                                  : "text-gray-300"
-                              }
-                            />
-                          ))}
-                        </div>
-                      </div>
-
-                      <h3 className="font-semibold text-lg mb-2">
-                        {item.name}
-                      </h3>
-
-                      <p className="text-gray-600 text-sm leading-relaxed flex-grow">
-                        {item.review}
-                      </p>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
+                  <h3 className="font-semibold text-base text-gray-800 mb-2">
+                    {item.name}
+                  </h3>
+
+                  <p className="text-gray-600 text-sm leading-relaxed flex-grow">
+                    {item.review}
+                  </p>
                 </div>
               </div>
             ))}
@@ -151,16 +150,17 @@ export default function TestimonialSection() {
         </div>
 
         {/* Dot Indicator */}
-        <div className="flex justify-center mt-8 gap-3">
-          {slides.map((_, index) => (
+        <div className="flex justify-center mt-8 gap-2.5">
+          {scrollSnaps.map((_, index) => (
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
-              className={`w-3 h-3 rounded-full transition ${
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
                 index === selectedIndex
-                  ? "bg-indigo-500 scale-125"
-                  : "bg-gray-300"
+                  ? "bg-slate-800 w-6"
+                  : "bg-gray-300 hover:bg-gray-400"
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>

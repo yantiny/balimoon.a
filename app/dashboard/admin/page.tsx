@@ -36,7 +36,7 @@ export default async function DashboardPage() {
       <Sidebar />
 
       <div className="flex-1">
-        <main className="p-8 max-w-7xl mx-auto">
+        <main className="p-4 sm:p-8 pt-16 md:pt-8 max-w-7xl mx-auto">
           <DashboardHeader />
 
           <StatCards

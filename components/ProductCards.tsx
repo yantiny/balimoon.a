@@ -13,11 +13,11 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     /* Gunakan Link dan arahkan href ke folder /katalog/[id] */
     <Link href={`/katalog/${product.id}`} className="group cursor-pointer">
-      <div className="overflow-hidden rounded-xl">
+      <div className="overflow-hidden rounded-xl bg-gray-50">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-64 object-cover group-hover:scale-105 transition duration-300"
+          className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition duration-300"
         />
       </div>
 

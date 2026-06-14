@@ -24,32 +24,32 @@ export default async function DetailProdukPage({
   const waLink = `https://wa.me/6283125400242?text=Halo, saya tertarik dengan produk ${product.name}`;
 
   return (
-    <div className="max-w-6xl mx-auto px-10 py-16 flex flex-col md:flex-row gap-12 bg-white">
+    <div className="max-w-6xl mx-auto px-4 sm:px-10 py-8 md:py-16 flex flex-col md:flex-row gap-8 md:gap-12 bg-white">
       {/* Bagian Gambar */}
       <div className="w-full md:w-1/2">
-        <div className="sticky top-10">
+        <div className="sticky top-24">
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-[600px] object-cover rounded-3xl shadow-sm"
+            className="w-full h-[320px] sm:h-[450px] md:h-[550px] lg:h-[600px] object-cover rounded-3xl shadow-sm"
           />
         </div>
       </div>
 
       {/* Bagian Detail */}
       <div className="w-full md:w-1/2 flex flex-col">
-        <span className="text-indigo-400 font-medium uppercase tracking-widest text-xs mb-2">
+        <span className="text-indigo-400 font-medium uppercase tracking-widest text-xs mb-2 block">
           {product.category}
         </span>
-        <h1 className="text-4xl font-extrabold text-slate-900 mb-2 italic">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 mb-2 italic">
           {product.name}
         </h1>
-        <p className="text-3xl font-bold text-slate-800 mb-6">
+        <p className="text-2xl sm:text-3xl font-bold text-slate-800 mb-4 sm:mb-6">
           Rp {product.price.toLocaleString("id-ID")}
         </p>
 
         {/* Deskripsi & List Detail */}
-        <div className="text-slate-500 leading-relaxed mb-8 space-y-4 text-sm">
+        <div className="text-slate-500 leading-relaxed mb-6 sm:mb-8 space-y-4 text-sm">
           <p>
             {product.deskripsi || "Hadirkan keindahan abadi di meja Anda..."}
           </p>
